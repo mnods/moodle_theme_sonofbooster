@@ -54,6 +54,7 @@ function theme_sonofbooster_get_pre_scss($theme) {
  * @return string SCSS.
  */
 function theme_sonofbooster_get_main_scss_content($theme) {
+    global $CFG;
     static $boosttheme = null;
     if (empty($boosttheme)) {
         $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
