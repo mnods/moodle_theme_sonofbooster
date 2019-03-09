@@ -60,6 +60,8 @@ function theme_sonofbooster_get_main_scss_content($theme) {
     }
     $scss = theme_boost_get_main_scss_content($boosttheme);
 
+    $scss .= file_get_contents($CFG->dirroot.'/theme/moobytes/scss/sonofbooster.scss');
+
     return $scss;
 }
 
