@@ -48,5 +48,5 @@ $templatecontext = [
 ];
 $nav = $PAGE->flatnav;
 $templatecontext['flatnavigation'] = $nav;
-$templatecontext['firstcollectionlabel'] = $nav->get_collectionlabel();
+//$templatecontext['firstcollectionlabel'] = $nav->get_collectionlabel();
 echo $OUTPUT->render_from_template('theme_sonofbooster/columns2', $templatecontext);
