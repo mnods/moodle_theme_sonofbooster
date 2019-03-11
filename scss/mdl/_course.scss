@@ -1,3 +1,14 @@
 .course-content .section-summary, .course-content ul li.section.main {
 border: 0 none;
 }
+.course-content .section-summary .summarytext{
+    margin-left:15px;
+}
+.course-content .section-summary .section-title a::after {
+    font-family: FontAwesome;
+    content: "\F0A9";
+    margin-left: 5px;
+}
+#section-0{
+    display:none;
+}
