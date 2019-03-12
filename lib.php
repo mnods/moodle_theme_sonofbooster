@@ -45,7 +45,7 @@ function theme_sonofbooster_get_pre_scss($theme) {
     }
     $scss = theme_boost_get_pre_scss($boosttheme);
 
-    $scss .= file_get_contents($CFG->dirroot.'/theme/moobytes/scss/sonofbooster_pre.scss');
+    $scss .= file_get_contents($CFG->dirroot.'/theme/sonofbooster/scss/sonofbooster_pre.scss');
 
     return $scss;
 }
