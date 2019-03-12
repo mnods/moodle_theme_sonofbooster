@@ -1,7 +1,22 @@
-.course-content .content ol, 
+.course-content .content ul:not(.nav-tabs):not(.section),
+.course-content .content ol,
+.course-content .content p,
+.generalbox ul:not(.nav-tabs),
+.generalbox ol,
+.generalbox p{
+    margin-top:1em;
+    margin-bottom:1em;
+}
+.course-content .content ol,
 .course-content .content ul:not(.nav-tabs):not(.section),
 .generalbox ol,
 .generalbox ul:not(.nav-tabs){
- margin-left:5em;
- margin-right:5em;
+    margin-left:5em;
+    margin-right:5em;
+}
+.course-content .content ol li,
+.course-content .content ul:not(.nav-tabs):not(.section) li,
+.generalbox ol li,
+.generalbox ul:not(.nav-tabs) li{
+    margin-bottom:0.5em;
 }
