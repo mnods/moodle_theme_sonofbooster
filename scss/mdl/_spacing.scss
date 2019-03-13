@@ -13,8 +13,8 @@
     .course-content .content ul:not(.nav-tabs):not(.section),
     .generalbox ol,
     .generalbox ul:not(.nav-tabs){
-        margin-left:5em;
-        margin-right:5em;
+        margin-left:2em;
+        margin-right:2em;
     }
     .course-content .content ol li,
     .course-content .content ul:not(.nav-tabs):not(.section) li,
@@ -22,4 +22,15 @@
     .generalbox ul:not(.nav-tabs) li{
         margin-bottom:0.5em;
     }
+}
+/* reduce padding under course title and breadcrumbs */
+.card-body {
+    padding-bottom: 0;
+}
+#region-main{
+    padding-top:0;
+}
+/* Increase padding from last section to section number control buttons. */
+#changenumsections {
+    padding-top: 1rem;
 }
