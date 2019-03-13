@@ -1,5 +1,5 @@
 .course-content .section-summary, .course-content ul li.section.main {
-border: 0 none;
+    border: 0 none;
 }
 .course-content .section-summary .summarytext{
     margin-left:15px;
@@ -21,4 +21,10 @@ border: 0 none;
 }
 .section-navigation.mdl-bottom .mdl-align{
     text-align: left;
+}
+/* Change style of highlighted section to highlight more. from campus boost */
+li.section.main.current {
+    border-bottom: $brand-primary 4px solid;
+    border-top: $brand-primary 3px solid; /*1px less because of section dividing border. */
+    background: $gray-lightest;
 }
