@@ -37,7 +37,9 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-// Block and Content widths from fordson
+// Block and Content widths from fordson - offset by 30px
+// https://github.com/dbnschools/moodle-theme_fordson/blob/master/settings/presets_adjustments_settings.php
+// see scss/mdl/_blocks.scss and lib.php theme_sonofbooster_get_pre_scss
     $name = 'theme_sonofbooster/blockwidth';
     $title = get_string('blockwidth', 'theme_sonofbooster');
     $description = get_string('blockwidth_desc', 'theme_sonofbooster');
@@ -57,17 +59,25 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-    // Drawer width
+    // Drawer width - see scss/mdl/_drawer.scss and lib.php theme_sonofbooster_get_pre_scss
+    // adapted from https://github.com/dbnschools/moodle-theme_fordson/blob/master/settings/presets_adjustments_settings.php
     $name = 'theme_sonofbooster/drawerwidth';
     $title = get_string('drawerwidth', 'theme_sonofbooster');
     $description = get_string('drawerwidth_desc', 'theme_sonofbooster');
     $default = '285px';
     $choices = array(
+            '240px' => '240px',
+            '255px' => '255px',
+            '270px' => '270px',
             '285px' => '285px',
             '300px' => '300px',
-            '310px' => '310px',
-            '320px' => '320px',
-            '430px' => '430px',
+            '315px' => '315px',
+            '330px' => '330px',
+            '345px' => '345px',
+            '360px' => '360px',
+            '375px' => '375px',
+            '390px' => '390px',
+            '405px' => '405px',
         );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
