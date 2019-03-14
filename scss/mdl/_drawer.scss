@@ -3,3 +3,17 @@ $drawerwidth: 285px !default;
 [data-region="drawer"] {
     width: $drawerwidth;
 }
+// offset
+#nav-drawer.closed {
+    left: -($drawerwidth + $drawer-offscreen-gutter);
+}
+body.drawer-open-left {
+    @include media-breakpoint-up(md) {
+        margin-left: $drawerwidth;
+    }
+}
+body.drawer-open-right {
+    @include media-breakpoint-up(md) {
+        margin-right: $drawerwidth;
+    }
+}
