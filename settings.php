@@ -63,6 +63,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('drawerwidth_desc', 'theme_sonofbooster');
     $default = '285px';
     $choices = array(
+            '285px' => '285px',
             '300px' => '300px',
             '310px' => '310px',
             '320px' => '320px',
