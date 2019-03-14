@@ -53,7 +53,7 @@ if ($ADMIN->fulltree) {
             '455px' => '425px',
             '480px' => '450px',
         );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choice);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 }
