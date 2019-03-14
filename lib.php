@@ -79,14 +79,14 @@ function theme_sonofbooster_get_main_scss_content($theme) {
         $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
     }
    // something not quite right here
-  //  if ($boosttheme->settings->preset == 'default.scss') {
+    if ($boosttheme->settings->preset == 'default.scss') {
           // Use our own default.scss as the Boost default.scss redefines $theme-colors instead of merging with
           // map-merge as shown in _variables.css.  The method 'theme_boost_get_main_scss_content()' only looks
           // at the 'preset' setting.  If this changes then adapt.*/
-       // $scss = file_get_contents($CFG->dirroot.'/theme/sonofbooster/scss/sob_presets/default.scss');
-   // } else {
+        $scss = file_get_contents($CFG->dirroot.'/theme/sonofbooster/scss/sob_presets/default.scss');
+    } else {
         $scss = theme_boost_get_main_scss_content($boosttheme);
-   // }
+    }
 
     $scss .= file_get_contents($CFG->dirroot.'/theme/sonofbooster/scss/sonofbooster.scss');
 
