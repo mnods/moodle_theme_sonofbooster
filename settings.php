@@ -56,4 +56,20 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+
+    // Drawer width
+    $name = 'theme_sonofbooster/drawerwidth';
+    $title = get_string('drawerwidth', 'theme_sonofbooster');
+    $description = get_string('drawerwidth_desc', 'theme_sonofbooster');
+    $default = '285px';
+    $choices = array(
+            '300px' => '300px',
+            '310px' => '310px',
+            '320px' => '320px',
+            '430px' => '430px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
 }

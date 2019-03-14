@@ -1,25 +1,3 @@
 @import "bts";
 @import "mdl";
 @import "mby/background";
-
-$blockwidth: 280px !default;
-
-/**
-* Block Width
-**/
-
-@media screen and (min-width: 991px) {
-    #region-main.has-blocks {
-        width: calc(100% - #{$blockwidth});
-    }
-    #region-main-settings-menu.has-blocks {
-        width: calc(100% - #{$blockwidth});
-    }
-}
-
-@media screen and (min-width: 991px) {
-    [data-region="blocks-column"] {
-        width: calc(#{$blockwidth} - 30px);
-    }
-}
-

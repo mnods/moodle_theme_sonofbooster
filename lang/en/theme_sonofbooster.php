@@ -51,3 +51,5 @@ $string['privacy:nop'] = 'The sonofbooster theme stores has settings that pertai
 // Settings
 $string['blockwidth'] = 'Block width';
 $string['blockwidth_desc'] = 'Choose a block width from the available options';
+$string['drawerwidth'] = 'Drawer width';
+$string['drawerwidth_desc'] = 'Choose a drawer width from the available options';

@@ -47,7 +47,8 @@ function theme_sonofbooster_get_pre_scss($theme) {
 
     $configurable = [
     // Config key => variableName,
-    'blockwidth' => ['blockwidth']
+    'blockwidth' => ['blockwidth'],
+    'drawerwidth' => ['drawerwidth']
     ];
     // Add settings variables.
     foreach ($configurable as $configkey => $targets) {

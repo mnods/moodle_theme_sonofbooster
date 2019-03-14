@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2019031402;
+$plugin->version   = 2019031403;
 $plugin->requires  = 2018120301.00; // Moodle 3.6.1 (Build: 20181205).
 $plugin->component = 'theme_sonofbooster';
 $plugin->maturity = MATURITY_BETA;
