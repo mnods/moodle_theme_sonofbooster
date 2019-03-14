@@ -36,4 +36,24 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+
+// Block and Content widths from fordson
+    $name = 'theme_sonofbooster/blockwidth';
+    $title = get_string('blockwidth', 'theme_sonofbooster');
+    $description = get_string('blockwidth_desc', 'theme_sonofbooster');
+    $default = '280px';
+    $choices = array(
+            '280px' => '250px',
+            '305px' => '275px',
+            '330px' => '300px',
+            '355px' => '325px',
+            '380px' => '350px',
+            '405px' => '375px',
+            '430px' => '400px',
+            '455px' => '425px',
+            '480px' => '450px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choice$
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 }

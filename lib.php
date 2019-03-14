@@ -45,6 +45,22 @@ function theme_sonofbooster_get_pre_scss($theme) {
     }
     $scss = theme_boost_get_pre_scss($boosttheme);
 
+    $configurable = [
+    // Config key => variableName,
+    'blockwidth' => ['blockwidth']
+    ];
+    // Add settings variables.
+    foreach ($configurable as $configkey => $targets) {
+        $value = $theme->settings->{$configkey};
+        if (empty($value)) {
+            continue;
+        }
+        array_map(function ($target) use (&$scss, $value) {
+            $scss .= '$' . $target . ': ' . $value . ";\n";
+        }
+        , (array)$targets);
+    }
+
     $scss .= file_get_contents($CFG->dirroot.'/theme/sonofbooster/scss/sonofbooster_pre.scss');
 
     return $scss;
