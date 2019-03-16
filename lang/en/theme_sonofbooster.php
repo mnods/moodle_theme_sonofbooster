@@ -53,3 +53,9 @@ $string['blockwidth'] = 'Block width';
 $string['blockwidth_desc'] = 'Choose a block width from the available options';
 $string['drawerwidth'] = 'Drawer width';
 $string['drawerwidth_desc'] = 'Choose a drawer width from the available options';
+
+$string['fontsizes'] = 'Font sizes';
+$string['fontsizesdesc'] = 'Set the base font size and heading multiplers.  Defaults of base: {$a->base}, h1: {$a->h1}, h2: {$a->h2}, h3: {$a->h3}, h4: {$a->h4}, h5: {$a->h5} and h6: {$a->h6}.';
+$string['fontsizeslabel'] = 'Base<br>H1<br>H2<br>H3<br>H4<br>H5<br>H6';
+$string['fontsizesordererror'] = '{$a->current} is greater than {$a->previous}';
+$string['fontsizessizeerror'] = 'Not enough values';

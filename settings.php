@@ -27,7 +27,29 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
     // Add your settings here.
-
+    
+    global $CFG;
+    if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_configfontsizes.php")) {
+        require_once($CFG->dirroot . '/theme/sonofbooster/classes/admin_setting_configfontsizes.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/admin_setting_configfontsizes.php")) {
+        require_once($CFG->themedir . '/sonofbooster/admin_setting_configfontsizes.php');
+    }
+     // Font sizes.
+    $name = 'theme_sonofbooster/fontsizes';
+    $title = get_string('fontsizes', 'theme_sonofbooster');
+    $base = '1rem';
+    $h1 = '2.5';
+    $h2 = '2';
+    $h3 = '1.75';
+    $h4 = '1.5';
+    $h5 = '1.25';
+    $h6 = '1';
+    $default = $base.PHP_EOL.$h1.PHP_EOL.$h2.PHP_EOL.$h3.PHP_EOL.$h4.PHP_EOL.$h5.PHP_EOL.$h6;
+    $description = get_string('fontsizesdesc', 'theme_sonofbooster',
+        array('base' => $base, 'h1' => $h1, 'h2' => $h2, 'h3' => $h3, 'h4' => $h4, 'h5' => $h5, 'h6' => $h6));
+    $setting = new admin_setting_configfontsizes($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
     // Custom CSS.
     $name = 'theme_sonofbooster/customcss';
     $title = get_string('customcss', 'theme_sonofbooster');

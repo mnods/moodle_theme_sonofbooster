@@ -1,0 +1,20 @@
+<style>
+#admin-fontsizes .form-defaultinfo br {
+    display: none;
+}
+
+#admin-fontsizes label {
+    margin-top: 7px;
+    text-align: right;
+    vertical-align: top;
+}
+
+#admin-fontsizes textarea {
+    display: inline-block;
+    height: 65%;
+}
+</style>
+<div class="form-text defaultsnext row">
+    <label class="col-sm-2" for="{{id}}">{{# str }} fontsizeslabel, theme_sonofbooster {{/ str }}</label>
+    <textarea rows="{{rows}}" cols="{{cols}}" id="{{id}}" name="{{name}}" class="col-sm-10 form-control {{#forceltr}}text-ltr{{/forceltr}}">{{value}}</textarea>
+</div>
