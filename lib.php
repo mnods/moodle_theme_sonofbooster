@@ -45,6 +45,24 @@ function theme_sonofbooster_get_pre_scss($theme) {
     }
     $scss = theme_boost_get_pre_scss($boosttheme);
 
+if (!empty($theme->settings->fontsizes)) {
+        global $CFG;
+        if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_configfontsizes.php")) {
+            require_once($CFG->dirroot . '/theme/somofbooster/classes/admin_setting_configfontsizes.php');
+        } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_co$
+            require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_configfontsizes.php');
+        }
+        $sizes = admin_setting_configfontsizes::decode_from_db($theme->settings->fontsizes);
+        $scss .= '$font-size-base: '.$sizes[0].';';
+        $scss .= '$h1-font-size: $font-size-base * '.$sizes[1].';';
+        $scss .= '$h2-font-size: $font-size-base * '.$sizes[2].';';
+        $scss .= '$h3-font-size: $font-size-base * '.$sizes[3].';';
+        $scss .= '$h4-font-size: $font-size-base * '.$sizes[4].';';
+        $scss .= '$h5-font-size: $font-size-base * '.$sizes[5].';';
+        $scss .= '$h6-font-size: $font-size-base * '.$sizes[6].';';
+    }
+
+
     $configurable = [
     // Config key => variableName,
     'blockwidth' => ['blockwidth'],

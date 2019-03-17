@@ -31,8 +31,8 @@ if ($ADMIN->fulltree) {
     global $CFG;
     if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_configfontsizes.php")) {
         require_once($CFG->dirroot . '/theme/sonofbooster/classes/admin_setting_configfontsizes.php');
-    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/admin_setting_configfontsizes.php")) {
-        require_once($CFG->themedir . '/sonofbooster/admin_setting_configfontsizes.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_configfontsizes.php")) {
+        require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_configfontsizes.php');
     }
      // Font sizes.
     $name = 'theme_sonofbooster/fontsizes';

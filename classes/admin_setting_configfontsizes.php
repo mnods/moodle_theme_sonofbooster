@@ -37,7 +37,7 @@ public function validate($data) {
                     $previous = $data[($index -1)];
                     $current = $data[$index];
                     if ($current > $previous) {
-                        $validated = get_string('fontsizesordererror', 'theme_moobytes', array('current' => $current, 'previous' => $previous));
+                        $validated = get_string('fontsizesordererror', 'theme_sonofbooster', array('current' => $current, 'previous' => $previous));
                     }
                     $index++;
                 }
