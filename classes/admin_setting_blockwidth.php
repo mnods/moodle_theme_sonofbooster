@@ -27,10 +27,21 @@
 require_once($CFG->dirroot . '/lib/adminlib.php');
 
 class admin_setting_blockwidth extends admin_setting_configselect {
-    public function __construct($name, $visiblename, $description, $defaultsetting, $choices) {
-            parent::__construct($name, $visiblename, $description, $defaultsetting);
+   public function __construct($name, $visiblename, $description, $defaultsetting, $choices) {
+        // Look for optgroup and single options.
+        if (is_array($choices)) {
+            $this->choices = [];
+            foreach ($choices as $key => $val) {
+                if (is_array($val)) {
+                    $this->optgroups[$key] = $val;
+                    $this->choices = array_merge($this->choices, $val);
+                } else {
+                    $this->choices[$key] = $val;
+                }
+            }
         }
-  
+        parent::__construct($name, $visiblename, $description, $defaultsetting);
+    }
   /**
      * Return the setting
      *
