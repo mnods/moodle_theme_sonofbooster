@@ -66,6 +66,10 @@ if (!empty($theme->settings->blockwidth)) {
         $blockwidth = $theme->settings->blockwidth;
         $scss .= '$blockwidth: '.$blockwidth.';';
     }
+if (!empty($theme->settings->drawerwidth)) {
+        $drawerwidth = $theme->settings->drawerwidth;
+        $scss .= '$drawerwidth: '.$drawerwidth.';';
+    }
     //$configurable = [
     // Config key => variableName,
     //'blockwidth' => ['blockwidth'],

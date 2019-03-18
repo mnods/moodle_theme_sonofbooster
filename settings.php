@@ -96,7 +96,8 @@ if ($ADMIN->fulltree) {
     $name = 'theme_sonofbooster/drawerwidth';
     $title = get_string('drawerwidth', 'theme_sonofbooster');
     $description = get_string('drawerwidth_desc', 'theme_sonofbooster');
-    $default = '285px';
+    $defaultsetting = '285px';
+    $visiblename = get_string('drawerwidth', 'theme_sonofbooster');
     $choices = array(
             '240px' => '240px',
             '255px' => '255px',
@@ -111,7 +112,7 @@ if ($ADMIN->fulltree) {
             '390px' => '390px',
             '405px' => '405px',
         );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new admin_setting_blockwidth($name, $visiblename, $description, $defaultsetting, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
