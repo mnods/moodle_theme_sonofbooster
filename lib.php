@@ -62,23 +62,33 @@ if (!empty($theme->settings->fontsizes)) {
         $scss .= '$h6-font-size: $font-size-base * '.$sizes[6].';';
     }
 
-
-    $configurable = [
-    // Config key => variableName,
-    'blockwidth' => ['blockwidth'],
-    'drawerwidth' => ['drawerwidth']
-    ];
-    // Add settings variables.
-    foreach ($configurable as $configkey => $targets) {
-        $value = $theme->settings->{$configkey};
-        if (empty($value)) {
-            continue;
+if (!empty($theme->settings->blockwidth)) {
+        global $CFG;
+        if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_blockwidth.php")) {
+            require_once($CFG->dirroot . '/theme/somofbooster/classes/admin_setting_blockwidth.php');
+        } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_blockwidth.php")){
+            require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_blockwidth.php');
         }
-        array_map(function ($target) use (&$scss, $value) {
-            $scss .= '$' . $target . ': ' . $value . ";\n";
-        }
-        , (array)$targets);
+        $blockwidth = $theme->settings->blockwidth;
+        $scss .= '$blockwidth: '.$blockwidth.';';
+        
     }
+    //$configurable = [
+    // Config key => variableName,
+    //'blockwidth' => ['blockwidth'],
+    //'drawerwidth' => ['drawerwidth']
+    //];
+    // Add settings variables.
+    //foreach ($configurable as $configkey => $targets) {
+      //  $value = $theme->settings->{$configkey};
+    //    if (empty($value)) {
+      //      continue;
+       // }
+       // array_map(function ($target) use (&$scss, $value) {
+         //   $scss .= '$' . $target . ': ' . $value . ";\n";
+       // }
+       // , (array)$targets);
+   // }
 
     $scss .= file_get_contents($CFG->dirroot.'/theme/sonofbooster/scss/sonofbooster_pre.scss');
 

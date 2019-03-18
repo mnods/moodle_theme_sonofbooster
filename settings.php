@@ -60,6 +60,12 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+
+ if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_blockwidth.php")) {
+        require_once($CFG->dirroot . '/theme/sonofbooster/classes/admin_setting_blockwidth.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_blockwidth.php")) {
+        require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_blockwidth.php');
+    }
 // Block and Content widths from fordson - offset by 30px
 // https://github.com/dbnschools/moodle-theme_fordson/blob/master/settings/presets_adjustments_settings.php
 // see scss/mdl/_blocks.scss and lib.php theme_sonofbooster_get_pre_scss
