@@ -73,6 +73,7 @@ if ($ADMIN->fulltree) {
     $title = get_string('blockwidth', 'theme_sonofbooster');
     $description = get_string('blockwidth_desc', 'theme_sonofbooster');
     $defaultsetting = '280px';
+    $visiblename = get_string('blockwidth', 'theme_sonofbooster');
     $choices = array(
             '280px' => '250px',
             '305px' => '275px',
@@ -83,6 +84,7 @@ if ($ADMIN->fulltree) {
             '430px' => '400px',
             '455px' => '425px',
             '480px' => '450px',
+            '505px' => '475px',
         );
     //$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting = new admin_setting_blockwidth($name, $visiblename, $description, $defaultsetting, $choices);
