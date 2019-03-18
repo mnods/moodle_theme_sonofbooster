@@ -63,15 +63,8 @@ if (!empty($theme->settings->fontsizes)) {
     }
 
 if (!empty($theme->settings->blockwidth)) {
-        global $CFG;
-        if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_blockwidth.php")) {
-            require_once($CFG->dirroot . '/theme/somofbooster/classes/admin_setting_blockwidth.php');
-        } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_blockwidth.php")){
-            require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_blockwidth.php');
-        }
         $blockwidth = $theme->settings->blockwidth;
         $scss .= '$blockwidth: '.$blockwidth.';';
-        
     }
     //$configurable = [
     // Config key => variableName,
