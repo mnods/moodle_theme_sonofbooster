@@ -72,7 +72,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_sonofbooster/blockwidth';
     $title = get_string('blockwidth', 'theme_sonofbooster');
     $description = get_string('blockwidth_desc', 'theme_sonofbooster');
-    $default = '280px';
+    $defaultsetting = '280px';
     $choices = array(
             '280px' => '250px',
             '305px' => '275px',
@@ -85,7 +85,7 @@ if ($ADMIN->fulltree) {
             '480px' => '450px',
         );
     //$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting = new admin_setting_blockwidth($name, $title, $description, $default, $choices);
+    $setting = new admin_setting_blockwidth($name, $visiblename, $description, $defaultsetting, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
