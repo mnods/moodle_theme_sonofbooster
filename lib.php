@@ -48,7 +48,7 @@ function theme_sonofbooster_get_pre_scss($theme) {
 if (!empty($theme->settings->fontsizes)) {
         global $CFG;
         if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_configfontsizes.php")) {
-            require_once($CFG->dirroot . '/theme/somofbooster/classes/admin_setting_configfontsizes.php');
+            require_once($CFG->dirroot . '/theme/sonofbooster/classes/admin_setting_configfontsizes.php');
         } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_configfontsizes.php")){
             require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_configfontsizes.php');
         }
