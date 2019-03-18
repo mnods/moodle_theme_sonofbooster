@@ -40,7 +40,7 @@ class admin_setting_blockwidth extends admin_setting_configselect {
                 }
             }
         }
-        parent::__construct($name, $visiblename, $description, $defaultsetting);
+        parent::__construct($name, $visiblename, $description, $defaultsetting, $choices);
     }
   /**
      * Return the setting
