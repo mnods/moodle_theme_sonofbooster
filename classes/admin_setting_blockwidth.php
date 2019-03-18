@@ -96,8 +96,8 @@ class admin_setting_blockwidth extends admin_setting_configselect {
             }
         }
         $options = [];
-        $template = 'theme_sonofbooster/setting_configselect';
-       
+        $template = 'core_admin/setting_configselect';
+        
         foreach ($this->choices as $value => $name) {
             $options[] = [
                 'value' => $value,
