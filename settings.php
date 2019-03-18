@@ -50,6 +50,7 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configfontsizes($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+      
     // Custom CSS.
     $name = 'theme_sonofbooster/customcss';
     $title = get_string('customcss', 'theme_sonofbooster');
@@ -77,7 +78,8 @@ if ($ADMIN->fulltree) {
             '455px' => '425px',
             '480px' => '450px',
         );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    //$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting = new admin_setting_blockwidth($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 

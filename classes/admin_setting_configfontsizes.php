@@ -22,6 +22,7 @@
  * @author     G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
+require_once($CFG->dirroot . '/lib/adminlib.php');
 
 class admin_setting_configfontsizes extends admin_setting_configtext {
     public function __construct($name, $visiblename, $description, $defaultsetting) {
