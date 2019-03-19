@@ -26,7 +26,7 @@
 
 require_once($CFG->dirroot . '/lib/adminlib.php');
 
-class admin_setting_blockwidth extends admin_setting_configselect {
+class sonofbooster_setting_select extends admin_setting_configselect {
    public function __construct($name, $visiblename, $description, $defaultsetting, $choices) {
         // Look for optgroup and single options.
         if (is_array($choices)) {

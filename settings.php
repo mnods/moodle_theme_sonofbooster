@@ -61,10 +61,10 @@ if ($ADMIN->fulltree) {
     $settings->add($setting);
 
 
- if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/admin_setting_blockwidth.php")) {
-        require_once($CFG->dirroot . '/theme/sonofbooster/classes/admin_setting_blockwidth.php');
-    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/admin_setting_blockwidth.php")) {
-        require_once($CFG->themedir . '/sonofbooster/classes/admin_setting_blockwidth.php');
+ if (file_exists("{$CFG->dirroot}/theme/sonofbooster/classes/sonofbooster_setting_select.php")) {
+        require_once($CFG->dirroot . '/theme/sonofbooster/classes/sonofbooster_setting_select.php');
+    } else if (!empty($CFG->themedir) && file_exists("{$CFG->themedir}/sonofbooster/classes/sonofbooster_setting_select.php")) {
+        require_once($CFG->themedir . '/sonofbooster/classes/sonofbooster_setting_select.php');
     }
 // Block and Content widths from fordson - offset by 30px
 // https://github.com/dbnschools/moodle-theme_fordson/blob/master/settings/presets_adjustments_settings.php
@@ -87,7 +87,7 @@ if ($ADMIN->fulltree) {
             '505px' => '475px',
         );
     //$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting = new admin_setting_blockwidth($name, $visiblename, $description, $defaultsetting, $choices);
+    $setting = new sonofbooster_setting_select($name, $visiblename, $description, $defaultsetting, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
@@ -112,7 +112,7 @@ if ($ADMIN->fulltree) {
             '390px' => '390px',
             '405px' => '405px',
         );
-    $setting = new admin_setting_blockwidth($name, $visiblename, $description, $defaultsetting, $choices);
+    $setting = new sonofbooster_setting_select($name, $visiblename, $description, $defaultsetting, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
