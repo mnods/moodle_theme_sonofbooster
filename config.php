@@ -25,6 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+require_once(__DIR__ . '/lib.php');
+
 $THEME->doctype = 'html5';
 $THEME->name = 'sonofbooster';
 $THEME->parents = array('boost');
@@ -49,3 +51,12 @@ $THEME->csspostprocess = 'theme_sonofbooster_process_css';
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+$THEME->layouts = [
+    // Main course page.
+    'course' => array(
+        'file' => 'course.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu' => true),
+    )
+];

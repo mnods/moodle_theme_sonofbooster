@@ -1,0 +1,20 @@
+{
+  "name": "theme-sonofbooster-tasks",
+  "version": "0.1.0",
+  "description": "Grunt tasks for Moodle Sonofbooster theme.",
+  "main": "Gruntfile.js",
+  "author": {
+    "name": "Mike Nodding",
+    "url": "http://none.com"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "1.0.1",
+    "grunt-eslint": "20.1.0",
+    "grunt-exec": "~0.4.6"
+  },
+  "engines": {
+    "node": ">=8.9 <12"
+  },
+  "license": "GPL-3.0"
+}

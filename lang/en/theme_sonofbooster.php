@@ -59,3 +59,6 @@ $string['fontsizesdesc'] = 'Set the base font size and heading multiplers.  Defa
 $string['fontsizeslabel'] = 'Base<br>H1<br>H2<br>H3<br>H4<br>H5<br>H6';
 $string['fontsizesordererror'] = '{$a->current} is greater than {$a->previous}';
 $string['fontsizessizeerror'] = 'Not enough values';
+// js tutorial
+$string['serverdatetime'] = 'Server date and time: ';
+$string['serverdatetimebutton'] = 'What\'s the date and time where you are?';
