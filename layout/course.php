@@ -36,6 +36,7 @@ $courseurl->param('id', $PAGE->course->id);
 $courseurl->param('sdt', true);
 $courseurl->param('sesskey', sesskey());
 $PAGE->requires->js_call_amd('theme_sonofbooster/serverdatetime', 'init', array('data' => array('courseurl' => $courseurl->out(false))));
+//$PAGE->requires->js_call_amd('theme_sonofbooster/showinput');
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
