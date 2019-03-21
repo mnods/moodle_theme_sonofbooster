@@ -38,6 +38,14 @@
         </div>
     </div>
     <div class="row">
+       <div class="col-12 text-center"> <span id="clock"></span></div>
+    {{#js}}
+        require(['jquery', 'theme_sonofbooster/jquery.countdown'], function($) {
+        $('#clock').countdown('2020/10/10', function(event) {
+        $(this).html(event.strftime('%D days %H:%M:%S'));
+        });
+    });
+    {{/js}}
         <div class="col-12 text-center"><button id="serverdatetimebtn" type="button" class="btn btn-primary text-center">{{# str }} serverdatetimebutton, theme_sonofbooster {{/ str }}</button></div>
         <h2 class="col-12 text-center">{{# str }} serverdatetime, theme_sonofbooster {{/ str }}<span id="theserverdatetime">{{ serverdatetime }}</span></h2>
     </div>

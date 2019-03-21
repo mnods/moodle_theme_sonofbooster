@@ -1,10 +1,5 @@
 /* jshint ignore:start */
-define(['jquery', 'core/log'], function($, log) {
-
-    "use strict"; // jshint ;_;
-
-    log.debug('sonofbooster showinput AMD');
-
+define(['jquery'], function($) {
     return {
         init: function() {
           
@@ -21,4 +16,3 @@ define(['jquery', 'core/log'], function($, log) {
     };
 });
 /* jshint ignore:end */
-
