@@ -65,7 +65,7 @@ $THEME->layouts = [
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
         'file' => 'columns2.php',
-        'regions' =>$mooprefooter,
+        'regions' => $mooprefooter,
         'defaultregion' => 'side-pre',
     ),
     // Main course page.
