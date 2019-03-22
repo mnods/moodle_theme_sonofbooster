@@ -62,3 +62,4 @@ $string['fontsizessizeerror'] = 'Not enough values';
 // js tutorial
 $string['serverdatetime'] = 'Server date and time: ';
 $string['serverdatetimebutton'] = 'What\'s the date and time where you are?';
+$string['region-footer'] = 'Footer';

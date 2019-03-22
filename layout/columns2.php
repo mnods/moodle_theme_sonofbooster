@@ -21,8 +21,10 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
+
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
+
 if (isloggedin()) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
 } else {
@@ -33,20 +35,21 @@ if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
-$blockshtml = $OUTPUT->blocks('side-pre');
-$hasblocks = strpos($blockshtml, 'data-block=') !== false;
+$blocksprehtml = $OUTPUT->sonofboosterblocks('side-pre');
+$haspreblocks = strpos($blocksprehtml, 'data-block=') !== false;
+$blocksfooterhtml = $OUTPUT->sonofboosterblocks('footer', 3);
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'sidepreblocks' => $blockshtml,
-    'hasblocks' => $hasblocks,
+    'sidepreblocks' => $blocksprehtml,
+    'haspreblocks' => $haspreblocks,
+    'footerblocks' => $blocksfooterhtml,
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
 ];
-$nav = $PAGE->flatnav;
-$templatecontext['flatnavigation'] = $nav;
-//$templatecontext['firstcollectionlabel'] = $nav->get_collectionlabel();
+
+$templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_sonofbooster/columns2', $templatecontext);
