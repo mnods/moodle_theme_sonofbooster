@@ -46,6 +46,8 @@
         });
     });
     {{/js}}
+        <div class="col-12 text-center"><form id="myForm"><input type="text" name="field1" id="field1">
+        <input type="button" name="submit" id="submit" value="Submit"></form></div>
         <div class="col-12 text-center"><button id="serverdatetimebtn" type="button" class="btn btn-primary text-center">{{# str }} serverdatetimebutton, theme_sonofbooster {{/ str }}</button></div>
         <h2 class="col-12 text-center">{{# str }} serverdatetime, theme_sonofbooster {{/ str }}<span id="theserverdatetime">{{ serverdatetime }}</span></h2>
     </div>
@@ -58,7 +60,6 @@
 </html>
 {{#js}}
 require(['theme_boost/loader']);
-require(['theme_sonofbooster/showinput'], 'init');
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
